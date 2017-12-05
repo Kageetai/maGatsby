@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import "./index.css";
 import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
 
 export default class MainLayout extends React.Component {
   getLocalTitle() {
@@ -47,6 +48,9 @@ export default class MainLayout extends React.Component {
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
+
+        <Header config={config} />
+
         {children()}
 
         <Footer config={config} />

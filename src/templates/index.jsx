@@ -25,10 +25,10 @@ const IndexPage = ({ data, pathContext }) => {
       <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
       <PostListing postEdges={group} dateFormat={config.dateFormatOutput} />
 
-      { previousUrl && !first ? (
+      {previousUrl && !first ? (
         <NavLink test={first} url={previousUrl} text="Go to Previous Page" />
       ) : null}
-      { nextUrl && !last ? (
+      {nextUrl && !last ? (
         <NavLink test={last} url={nextUrl} text="Go to Next Page" />
       ) : null}
     </div>
