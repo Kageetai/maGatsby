@@ -13,7 +13,6 @@ const NavLink = props => {
 };
 
 const IndexPage = ({ data, pathContext }) => {
-  console.log(pathContext);
   const { group, index, first, last } = pathContext;
   const previousUrl = index - 1 === 1 ? "" : (index - 1).toString();
   const nextUrl = (index + 1).toString();
