@@ -13,6 +13,7 @@ const NavLink = props => {
 };
 
 const IndexPage = ({ data, pathContext }) => {
+  console.log(pathContext);
   const { group, index, first, last } = pathContext;
   const previousUrl = index - 1 === 1 ? "" : (index - 1).toString();
   const nextUrl = (index + 1).toString();
@@ -25,8 +26,12 @@ const IndexPage = ({ data, pathContext }) => {
       <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
       <PostListing postEdges={group} dateFormat={config.dateFormatOutput} />
 
-      <NavLink test={first} url={previousUrl} text="Go to Previous Page" />
-      <NavLink test={last} url={nextUrl} text="Go to Next Page" />
+      { previousUrl && !first ? (
+        <NavLink test={first} url={previousUrl} text="Go to Previous Page" />
+      ) : null}
+      { nextUrl && !last ? (
+        <NavLink test={last} url={nextUrl} text="Go to Next Page" />
+      ) : null}
     </div>
   );
 };
