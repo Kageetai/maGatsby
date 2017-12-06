@@ -11,9 +11,7 @@ class Footer extends Component {
     }
     return (
       <header className="header">
-        <Link to="/">
-          {config.siteTitle}
-        </Link>
+        <Link to="/">{config.siteTitle}</Link>
       </header>
     );
   }
