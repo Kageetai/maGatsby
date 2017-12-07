@@ -3,10 +3,10 @@ import Helmet from "react-helmet";
 import _ from "lodash";
 import Link from "gatsby-link";
 import UserInfo from "../components/UserInfo/UserInfo";
-import Disqus from "../components/Disqus/Disqus";
 import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
+import DateTime from "../components/DateTime/DateTime";
 import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.scss";
 import "./post.scss";
@@ -29,21 +29,24 @@ export default class PostTemplate extends React.Component {
           <title>{`${post.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
-        <div>
-          <h1>{post.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          <div className="post-meta">
-            {post.category ? (
-              <Link to={`/categories/${_.kebabCase(post.category)}`}>
-                {post.category}
-              </Link>
-            ) : null}
-            <PostTags tags={post.tags} />
-            <SocialLinks postPath={slug} postNode={postNode} />
-          </div>
-          <UserInfo config={config} />
-          <Disqus postNode={postNode} />
+        <h1>{post.title}</h1>
+        <div className="post-date">
+          <DateTime
+            dateTime={post.date}
+            dateFormat={config.dateFormatOutput}
+          />
         </div>
+        <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        <div className="post-meta">
+          {post.category ? (
+            <Link to={`/categories/${_.kebabCase(post.category)}`}>
+              {post.category}
+            </Link>
+          ) : null}
+          <PostTags tags={post.tags} />
+          <SocialLinks postPath={slug} postNode={postNode} />
+        </div>
+        <UserInfo config={config} />
       </div>
     );
   }

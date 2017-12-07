@@ -3,7 +3,7 @@ module.exports = {
   blogPostSort: "date", // which field on the post to sort by
   blogPageSize: 5, // size of pages of blog posts
   dateFormatInput: "YYYY-MM-DD", // date format to use for parsing from source
-  dateFormatOutput: "LL", // date format to use for output/rendering, see http://momentjs.com/docs/#/displaying/format/
+  dateFormatOutput: "L", // date format to use for output/rendering, see http://momentjs.com/docs/#/displaying/format/
   siteTitle: "Kageetai.net", // Site title.
   siteTitleAlt: "maBlog", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.

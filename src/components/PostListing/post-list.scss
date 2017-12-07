@@ -1,0 +1,24 @@
+.post-list {
+  list-style: none;
+  padding: 0;
+
+  > li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 1em;
+
+    > .post-list-date {
+      line-height: 1.5em;
+      margin-right: 1em;
+    }
+
+    > .post-list-title {
+      flex: 1 0 0;
+
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
+}

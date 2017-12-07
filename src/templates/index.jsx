@@ -22,7 +22,6 @@ const IndexPage = ({ data, pathContext }) => {
       <Helmet title={config.siteTitle} />
       <SEO postEdges={group} />
 
-      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
       <PostListing postEdges={group} dateFormat={config.dateFormatOutput} />
 
       {previousUrl && !first ? (
@@ -31,6 +30,8 @@ const IndexPage = ({ data, pathContext }) => {
       {nextUrl && !last ? (
         <NavLink test={last} url={nextUrl} text="Go to Next Page" />
       ) : null}
+
+      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
     </div>
   );
 };
