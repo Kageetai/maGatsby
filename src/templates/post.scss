@@ -1,5 +1,11 @@
-.post-meta {
+.post {
+  max-width: 750px;
+  margin: 0 auto;
+
+  .post-meta {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
 }
+

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
 import defaultHeaderBackground from "./headerBackground.jpg";
-import "./Header.css";
+import "./Header.scss";
 
 class Header extends Component {
   constructor(props) {
@@ -46,7 +46,6 @@ class Header extends Component {
       <header className="header" style={headerStyle}>
         <Link to="/">
           <h1>{config.siteTitle}</h1>
-          <small>{config.siteTitleAlt}</small>
         </Link>
       </header>
     );

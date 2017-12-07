@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
-import "./index.css";
+import "./index.scss";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 
@@ -51,7 +51,7 @@ export default class MainLayout extends React.Component {
 
         <Header config={config} />
 
-        {children()}
+        <div className="container">{children()}</div>
 
         <Footer config={config} />
       </div>

@@ -56,6 +56,7 @@ module.exports = {
         color: config.themeColor
       }
     },
+    "gatsby-plugin-sass",
     "gatsby-plugin-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
