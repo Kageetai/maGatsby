@@ -1,4 +1,7 @@
 header.header {
-    font-size: 3em;
+    text-transform: uppercase;
 }
 
+header.header .cover {
+    max-width: 100%;
+}

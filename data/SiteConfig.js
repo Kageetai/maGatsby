@@ -42,5 +42,7 @@ module.exports = {
   ],
   copyright: "Copyright © 2017. Kageetai.net", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#e0e0e0" // Used for setting manifest background color.
+  backgroundColor: "#e0e0e0", // Used for setting manifest background color.
+  flickrUser: "98487132@N05",
+  flickrApiKey: "c1327aefb586f7ddd97dcf92eb3ae21d"
 };
