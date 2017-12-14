@@ -15,17 +15,17 @@ class Footer extends Component {
       <footer className="footer">
         <UserLinks config={config} labeled />
         <div className="notice-container">
-          <h4>{copyright}</h4>
+          <span>{copyright}</span>
 
           <Link to={url}>
             <button>Subscribe</button>
           </Link>
-          <h4>
+          <span>
             Based on{" "}
             <a href="https://github.com/Vagr9K/gatsby-advanced-starter">
               Gatsby Advanced Starter
             </a>.
-          </h4>
+          </span>
         </div>
       </footer>
     );

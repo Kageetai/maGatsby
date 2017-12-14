@@ -21,7 +21,10 @@ export default class PostTemplate extends React.Component {
       post.category_id = config.postDefaultCategoryID;
     }
     if (!post.title) {
-      post.title = this.props.data.markdownRemark.fields.title;
+      post.title = postNode.fields.title;
+    }
+    if (!post.date) {
+      post.date = postNode.fields.date;
     }
     return (
       <div className="post">
@@ -31,10 +34,7 @@ export default class PostTemplate extends React.Component {
         <SEO postPath={slug} postNode={postNode} postSEO />
         <h1>{post.title}</h1>
         <div className="post-date">
-          <DateTime
-            dateTime={post.date}
-            dateFormat={config.dateFormatOutput}
-          />
+          <DateTime dateTime={post.date} dateFormat={config.dateFormatOutput} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
         <div className="post-meta">

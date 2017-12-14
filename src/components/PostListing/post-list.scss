@@ -6,7 +6,8 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-bottom: 1em;
+    align-items: baseline;
+    margin-bottom: 2em;
 
     > .post-list-date {
       line-height: 1.5em;
@@ -18,6 +19,10 @@
 
       h2 {
         margin-top: 0;
+      }
+
+      > .post-list-excerpt {
+        font-style: italic;
       }
     }
   }

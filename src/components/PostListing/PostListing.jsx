@@ -36,7 +36,7 @@ class PostListing extends React.Component {
               <Link to={post.path}>
                 <h2>{post.title}</h2>
               </Link>
-              <span>{post.excerpt}</span>
+              <div className="post-list-excerpt">{post.excerpt}</div>
             </div>
           </li>
         ))}
