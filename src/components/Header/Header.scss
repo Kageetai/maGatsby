@@ -3,13 +3,13 @@ header.header {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  background: no-repeat fixed center center;
+  background: url(./headerBackground.jpg) no-repeat center center;
   background-size: cover;
-  height: 200px;
+  height: 20vh;
   text-transform: uppercase;
 
   @media screen and (min-height: 750px) {
-    height: 300px;
+    height: 30vh;
   }
 
   > a {
