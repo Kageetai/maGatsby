@@ -47,12 +47,14 @@ class Header extends Component {
 
   onScroll() {
     this.setState({
-      headerBackgroundPositionY:
+      headerBackgroundPositionY: Math.min(
         defaultHeaderBackgroundPositionY /
           this.headerElement.clientHeight /
           headerBackgroundSpeed *
           window.scrollY +
-        defaultHeaderBackgroundPositionY
+          defaultHeaderBackgroundPositionY,
+        100
+      )
     });
   }
 
