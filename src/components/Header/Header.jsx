@@ -3,6 +3,9 @@ import Link from "gatsby-link";
 import defaultHeaderBackground from "./headerBackground.jpg";
 import "./Header.scss";
 
+const defaultHeaderBackgroundPositionY = 50;
+const headerBackgroundSpeed = 2;
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +14,7 @@ class Header extends Component {
       randomPhoto: "",
       headerBackgroundPositionY: 50
     };
-    this.handleScroll = this.handleScroll.bind(this);
+    this.onScroll = this.onScroll.bind(this);
   }
 
   componentDidMount() {
@@ -27,25 +30,29 @@ class Header extends Component {
         this.setState({
           photos: response.photos.photo,
           randomPhoto:
-            this.state.photos && this.state.photos.length
-              ? Math.floor(Math.random() * this.state.photos.length)
+            response.photos.photo && response.photos.photo.length
+              ? Math.floor(Math.random() * response.photos.photo.length)
               : 0
         })
       )
       // eslint-disable-next-line no-console
       .catch(error => console.error(error));
 
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.onScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.onScroll);
   }
 
-  handleScroll() {
+  onScroll() {
     this.setState({
       headerBackgroundPositionY:
-        50 / -this.headerElement.clientHeight * window.scrollY + 50
+        defaultHeaderBackgroundPositionY /
+          this.headerElement.clientHeight /
+          headerBackgroundSpeed *
+          window.scrollY +
+        defaultHeaderBackgroundPositionY
     });
   }
 
