@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Link from "gatsby-link";
 import defaultHeaderBackground from "./headerBackground.jpg";
 import "./Header.scss";
+import UserLinks from "../UserLinks/UserLinks";
 
 const defaultHeaderBackgroundPositionY = 50;
 const headerBackgroundSpeed = 2;
@@ -76,9 +77,11 @@ class Header extends Component {
           this.headerElement = element;
         }}
       >
-        <Link to="/">
+        <Link to="/" className="header-site-title">
           <h1>{config.siteTitle}</h1>
         </Link>
+
+        <UserLinks config={config} />
       </header>
     );
   }

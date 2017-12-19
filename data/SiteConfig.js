@@ -27,17 +27,22 @@ module.exports = {
     {
       label: "GitHub",
       url: "https://github.com/kageetai",
-      iconClassName: "fa fa-github"
+      iconClassName: "fab fa-github"
     },
     {
       label: "Twitter",
       url: "https://twitter.com/kageetai",
-      iconClassName: "fa fa-twitter"
+      iconClassName: "fab fa-twitter"
+    },
+    {
+      label: "Facebook",
+      url: "https://facebook.com/kageetai",
+      iconClassName: "fab fa-facebook"
     },
     {
       label: "Email",
       url: "mailto:ma@kageetai.net",
-      iconClassName: "fa fa-envelope"
+      iconClassName: "far fa-envelope"
     }
   ],
   copyright: "Copyright © 2017. Kageetai.net", // Copyright string for the footer of the website and RSS feed.
